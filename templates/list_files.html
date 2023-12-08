@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章列表</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body class="background">
+    <h1 class="centered-title">目錄</h1>
+    <div class="articles-grid">
+        {% for file in files %}
+            <div class="article-item">
+                <a href="{{ url_for('article', filename=file) }}">{{ file }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

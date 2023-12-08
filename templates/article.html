@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章內容</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+
+<body class="background">
+    <h1 class="centered-title">內文</h1>
+    <div class="container">
+        <div class="content-box">
+            {{ content | safe }}
+        </div>
+        <div class="nav-bar-but">
+            <div class="previous-page" >
+                <a href="{{ url_for('article', filename=previous_filename) }}" class="previous-button">上一頁</a>
+            </div>
+            <!-- 返回目錄 -->
+            <div class="menu">
+                <a href="{{ url_for('list_files') }}" class="menu-button">目錄</a>
+            </div>
+            <div class="next-page">
+                <a href="{{ url_for('article', filename=next_filename) }}" class="next-button">下一頁</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

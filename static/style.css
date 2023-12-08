@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: flex-start; /* 从顶部开始 */
+    align-items: center; /* 水平居中 */
+    min-height: 100vh; /* 至少与视窗一样高 */
+    margin: 0; /* 移除预设边距 */
+}
+
+
+
+.container {
+    width: 100%; /* 容器宽度为100% */
+    margin: 0 auto; /* 使容器居中显示 */
+    display: flex; /* 使子元素 flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    /* 下面留空間出來 */
+    padding-bottom: 5%;
+}
+
+.content-box {
+    width: 100%; /* 宽度根据设备宽度调整 */
+    margin: 10px 0; /* 上下的间距 */
+    padding: 10px; /* 内部的间距 */
+    border: 1px solid #ccc; /* 边框 */
+    box-sizing: border-box; /* 盒模型 */
+    font-size: 33px; /* 或您想要的任何大小 */
+    text-align: justify; /* 两端对齐 */
+    padding-bottom: 3%;
+}
+
+.nav-bar-but {
+    width: calc(100% - 6px); /* 减去边框的宽度，确保和 .content-box 宽度一致 */
+    height: 2vh; /* 高度 */
+    margin-top: -3px; /* 使 .nav-bar 贴合在 .content-box 下方 */
+    display: flex; /* 使子元素 flex 布局 */
+    flex-direction: row; /* 排列 */
+    justify-content: space-between; /* 两端对齐 */
+}
+
+.next-page {
+    width: 32%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 加上邊框 */
+    border: 2px solid #808080;
+
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+}
+
+.next-button {
+    width: 100%;
+    height: inherit;
+    display: flex; /* 使链接填充整个.next-page容器 */
+    padding: 10px 0; /* 上下填充，增加点击区域的大小 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    /* 加入背景顏色 */
+    background-color: #b1b1b1;
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+    font-size: 23px; /* 或您想要的任何大小 */
+}
+
+.previous-page {
+    width: 32%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 加上邊框 */
+    border: 2px solid #808080;
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+}
+
+.previous-button {
+    width: 100%;
+    height: inherit;
+    display: flex; /* 使链接填充整个.previous-page容器 */
+    padding: 10px 0; /* 上下填充，增加点击区域的大小 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    /* 加入背景顏色 */
+    background-color: #b1b1b1;
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+    font-size: 23px; /* 或您想要的任何大小 */
+}
+
+.menu {
+    width: 32%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 加上邊框 */
+    border: 2px solid #808080;
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+}
+
+.menu-button {
+    width: 100%;
+    height: inherit;
+    display: flex; /* 使链接填充整个.menu容器 */
+    padding: 10px 0; /* 上下填充，增加点击区域的大小 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    /* 加入背景顏色 */
+    background-color: #b1b1b1;
+    /* 邊緣圓弧 */
+    border-radius: 10px;
+    font-size: 23px; /* 或您想要的任何大小 */
+}

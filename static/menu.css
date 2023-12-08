@@ -1,0 +1,33 @@
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-width: auto;
+    margin: auto;
+    padding: 10px;
+    border: 2.5px solid #ccc;
+    box-sizing: border-box;
+}
+.article-item {
+    border: 2.5px solid #ccc;
+    padding: 5px;
+    list-style: none;
+    /* 至中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.centered-title {
+    text-align: center;
+    font-size: 3vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.background {
+    background-color: rgb(225, 246, 255, 0.5);
+}
+
+
