@@ -17,7 +17,7 @@
     <div class="articles-grid">
         {% for file in files %}
             <div class="article-item">
-                <a href="{{ url_for('article', filename=file) }}">{{ file }}</a>
+                <a href="{{ url_for('article', book_name=book_name, filename=file) }}">{{ file }}</a>
             </div>
         {% endfor %}
     </div>

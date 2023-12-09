@@ -14,7 +14,7 @@
         </div>
         <div class="nav-bar-but">
             <div class="previous-page" >
-                <a href="{{ url_for('article', filename=previous_filename) }}" class="previous-button">上一頁</a>
+                <a href="{{ url_for('article', book_name=book_name, filename=previous_filename) }}" class="previous-button">上一頁</a>
             </div>
             <!-- 返回首頁 -->
             <div class="previous-page" >
@@ -22,10 +22,10 @@
             </div>
             <!-- 返回目錄 -->
             <div class="menu">
-                <a href="{{ url_for('list_files') }}" class="menu-button">目錄</a>
+                <a href="{{ url_for('list_files', book_name=book_name) }}" class="menu-button">目錄</a>
             </div>
             <div class="next-page">
-                <a href="{{ url_for('article', filename=next_filename) }}" class="next-button">下一頁</a>
+                <a href="{{ url_for('article', book_name=book_name, filename=next_filename) }}" class="next-button">下一頁</a>
             </div>
         </div>
     </div>

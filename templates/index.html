@@ -7,8 +7,20 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='menu.css') }}">
 </head>
 <body class="background">
+    <!-- 導航選單 -->
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="nav-button">
+            <img src="{{ url_for('static', filename='img/home3.png') }}" alt="Home">
+        </a>
+    </nav>
     <h1 class="centered-title">這是一個網站</h1>
-    <a href="{{ url_for('list_files') }}" class="button">查看文章列表</a>
+    <div class="bookshelf">
+        {% for book in books %}
+            <div class="book">
+                <a href="{{ url_for('list_files', book_name=book) }}">{{ book }}</a>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
 

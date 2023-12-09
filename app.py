@@ -7,21 +7,25 @@ app = Flask(__name__)
 # 使用index.html模板
 @app.route('/')
 def index():
-    return render_template('index.html')
+    books_directory = '../books/'
+    # 获取所有子目录的名称
+    books = [d for d in os.listdir(books_directory) if os.path.isdir(os.path.join(books_directory, d))]
+    return render_template('index.html', books=books)
 
-@app.route('/list_files')
-def list_files():
-    directory = '../grep1'
+@app.route('/list_files/<book_name>')
+def list_files(book_name):
+    directory = os.path.join('../books/', book_name)
     # 确保文件列表是按字典顺序排序的
     files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))])
-    return render_template('list_files.html', files=files)
+    return render_template('list_files.html', files=files, book_name=book_name)
 
-@app.route('/article/<filename>')
-def article(filename):
-    directory = '../grep1'
-    # 同样，获取排序后的文件列表
+@app.route('/article/<book_name>/<filename>')
+def article(book_name, filename):
+    directory = os.path.join('../books/', book_name)
+    # 获取排序后的文件列表
     files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))])
     file_path = os.path.join(directory, filename)
+
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -29,14 +33,15 @@ def article(filename):
         current_index = files.index(filename)
         # 获取下一个文件的名称，如果当前文件是列表中的最后一个，则返回第一个文件
         next_index = (current_index + 1) % len(files)
-        # 獲取上一個文件的名稱，如果當前文件是列表中的第一個，則返回最後一個文件
+        # 获取上一个文件的名称，如果当前文件是列表中的第一个，则返回最后一个文件
         previous_index = (current_index - 1) % len(files)
 
         next_filename = files[next_index]
         previous_filename = files[previous_index]
-        return render_template('article.html', content=content, next_filename=next_filename, previous_filename=previous_filename)
+        return render_template('article.html', content=content, next_filename=next_filename, previous_filename=previous_filename, book_name=book_name)
     else:
         return "文章不存在"
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
