@@ -47,6 +47,13 @@
     align-items: center;
 }
 
+/* 書名調整 */
+.book-title {
+    text-align: center;
+    font-size: 3vh;
+
+}
+
 .columnFormat {
     display: flex;
     flex-direction: column;

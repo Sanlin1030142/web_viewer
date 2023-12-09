@@ -20,7 +20,7 @@
                 <!-- 插入圖片 /static/img/cover.png -->
                 <a href="{{ url_for('list_files', book_name=book) }}" class="columnFormat">
                     <img src="{{ url_for('static', filename='img/cover.png') }}" alt="Cover">
-                    {{ book }}
+                    <span class="book-title">{{ book }}</span>
                 </a>
             </div>
         {% endfor %}
