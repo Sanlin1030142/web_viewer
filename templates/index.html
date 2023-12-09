@@ -17,7 +17,11 @@
     <div class="bookshelf">
         {% for book in books %}
             <div class="book">
-                <a href="{{ url_for('list_files', book_name=book) }}">{{ book }}</a>
+                <!-- 插入圖片 /static/img/cover.png -->
+                <a href="{{ url_for('list_files', book_name=book) }}" class="columnFormat">
+                    <img src="{{ url_for('static', filename='img/cover.png') }}" alt="Cover">
+                    {{ book }}
+                </a>
             </div>
         {% endfor %}
     </div>
