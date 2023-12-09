@@ -33,21 +33,18 @@ body {
 .nav-bar-but {
     width: calc(100% - 6px); /* 减去边框的宽度，确保和 .content-box 宽度一致 */
     height: 2vh; /* 高度 */
-    margin-top: -3px; /* 使 .nav-bar 贴合在 .content-box 下方 */
+    margin-top: 2px; /* 使 .nav-bar 贴合在 .content-box 下方 */
     display: flex; /* 使子元素 flex 布局 */
     flex-direction: row; /* 排列 */
     justify-content: space-between; /* 两端对齐 */
 }
 
 .next-page {
-    width: 32%;
+    width: 24%;
     height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* 加上邊框 */
-    border: 2px solid #808080;
 
     /* 邊緣圓弧 */
     border-radius: 10px;
@@ -68,14 +65,12 @@ body {
 }
 
 .previous-page {
-    width: 32%;
+    width: 24%;
     height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* 加上邊框 */
-    border: 2px solid #808080;
     /* 邊緣圓弧 */
     border-radius: 10px;
 }
@@ -95,14 +90,12 @@ body {
 }
 
 .menu {
-    width: 32%;
+    width: 24%;
     height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* 加上邊框 */
-    border: 2px solid #808080;
     /* 邊緣圓弧 */
     border-radius: 10px;
 }
@@ -120,3 +113,6 @@ body {
     border-radius: 10px;
     font-size: 23px; /* 或您想要的任何大小 */
 }
+
+/* general purpose */
+/* 上方導航選單 左上角可以返回index.html */

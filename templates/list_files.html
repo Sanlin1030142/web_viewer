@@ -5,7 +5,15 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='menu.css') }}">
 </head>
 <body class="background">
+    <!-- 導航選單 -->
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="nav-button">
+            <img src="{{ url_for('static', filename='img/home3.png') }}" alt="Home">
+        </a>
+    </nav>
+    <!-- 標題 -->
     <h1 class="centered-title">目錄</h1>
+    <!-- 內容 -->
     <div class="articles-grid">
         {% for file in files %}
             <div class="article-item">

@@ -3,7 +3,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# 增加系統首頁 / 的路由
+# 使用index.html模板
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/list_files')
 def list_files():
     directory = '../grep1'
     # 确保文件列表是按字典顺序排序的

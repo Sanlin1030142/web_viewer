@@ -19,6 +19,7 @@
 
 }
 
+/* 統一的h1格式 */
 .centered-title {
     text-align: center;
     font-size: 3vh;
@@ -29,5 +30,29 @@
 .background {
     background-color: rgb(225, 246, 255, 0.5);
 }
+
+/* 導航選單格式 */
+.navbar {
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    background-color: rgba(113, 223, 215, 0.3); /* 导航栏背景色 */
+    overflow: hidden; /* 如果导航内容太多，隐藏溢出部分 */
+}
+
+.nav-button {
+    display: inline-block;
+    color: white;
+    text-align: center; 
+    text-decoration: none;
+}
+
+.nav-button img {
+    height: 7vh; /* 或您希望的高度 */
+    width: auto; /* 保持图片的宽高比 */
+    vertical-align: middle; /* 垂直居中 */
+}
+
+
 
 

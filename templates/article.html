@@ -16,6 +16,10 @@
             <div class="previous-page" >
                 <a href="{{ url_for('article', filename=previous_filename) }}" class="previous-button">上一頁</a>
             </div>
+            <!-- 返回首頁 -->
+            <div class="previous-page" >
+                <a href="{{ url_for('index') }}" class="previous-button">返回首頁</a>
+            </div>
             <!-- 返回目錄 -->
             <div class="menu">
                 <a href="{{ url_for('list_files') }}" class="menu-button">目錄</a>
