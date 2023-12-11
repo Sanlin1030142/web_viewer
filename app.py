@@ -10,7 +10,18 @@ def index():
     books_directory = '../books/'
     # 获取所有子目录的名称
     books = [d for d in os.listdir(books_directory) if os.path.isdir(os.path.join(books_directory, d))]
-    return render_template('index.html', books=books)
+
+    # 检查每本书的封面图片是否存在
+    book_covers = {}
+    for book in books:
+        cover_path = 'img/' + book + '.png'
+        full_cover_path = os.path.join('static', cover_path)
+        if os.path.isfile(full_cover_path):
+            book_covers[book] = cover_path
+        else:
+            book_covers[book] = 'img/cover.png'  # 默认封面
+
+    return render_template('index.html', books=books, book_covers=book_covers)
 
 @app.route('/list_files/<book_name>')
 def list_files(book_name):

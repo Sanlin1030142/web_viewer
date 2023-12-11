@@ -60,3 +60,12 @@
     justify-content: center;
     align-items: center;
 }
+
+/* 書皮格式 */
+.cover_format {
+    width: 150px;   /* 您期望的宽度，例如与 cover.png 的宽度相同 */
+    height: 270px;  /* 您期望的高度，例如与 cover.png 的高度相同 */
+    object-fit: cover; /* 保持宽高比，同时填满容器 */
+    border-radius: 5px; /* 可选，为图片添加圆角 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 可选，为图片添加阴影 */
+}
