@@ -3,6 +3,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+def sort_key(file_name):
+    # 假設文件名是 "chapter_1.txt"，"chapter_10.txt" 等
+    # 移除 "chapter_" 和 ".txt"，然後將剩下的部分轉換為整數
+    return int(file_name.replace("chapter_", "").replace(".txt", ""))
+
 # 增加系統首頁 / 的路由
 # 使用index.html模板
 @app.route('/')
@@ -27,19 +32,23 @@ def index():
 def list_files(book_name):
     directory = os.path.join('../books/', book_name)
     # 确保文件列表是按字典顺序排序的
-    files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))])
+    files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))], key=sort_key)
     return render_template('list_files.html', files=files, book_name=book_name)
 
 @app.route('/article/<book_name>/<filename>')
 def article(book_name, filename):
     directory = os.path.join('../books/', book_name)
     # 获取排序后的文件列表
-    files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))])
+    files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))], key=sort_key)
     file_path = os.path.join(directory, filename)
 
     if os.path.exists(file_path):
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            with open(file_path, 'r', encoding='gb2312') as f:
+                content = f.read()
         # 找出当前文件在列表中的位置
         current_index = files.index(filename)
         # 获取下一个文件的名称，如果当前文件是列表中的最后一个，则返回第一个文件
