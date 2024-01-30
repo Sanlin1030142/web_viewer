@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章內容</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/menu.css">
+    <script src="/static/func.js"></script>
+</head>
+
+<body class="background">
+    <h1 class="centered-title">內文</h1>
+    <div class="container">
+        <div class="content-box">
+            我是第一章<br>通過這個設置，當您訪問您的 Flask 應用的根路徑時，它將會顯示 ../grep1 目錄中所有文件的名稱。請注意，文件路徑 ../grep1 是相對於您的 Flask 應用的啟動位置。您可能需要根據您的具體情況調整這個路徑。
+        </div>
+        <div class="nav-bar-but">
+            <div class="previous-page" >
+                <a href="/article/grep2/chapter_3.txt" class="previous-button">上一頁</a>
+            </div>
+            <!-- 返回首頁 -->
+            <div class="menu" >
+                <a href="/" class="menu-button">返回首頁</a>
+            </div>
+            <!-- 返回目錄 -->
+            <div class="menu">
+                <a href="/list_files/grep2" class="menu-button">目錄</a>
+            </div>
+            <div class="next-page">
+                <a href="/article/grep2/chapter_2.txt" class="next-button">下一頁</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

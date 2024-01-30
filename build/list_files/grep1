@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章列表</title>
+    <link rel="stylesheet" type="text/css" href="/static/menu.css">
+</head>
+<body class="background">
+    <!-- 導航選單 -->
+    <nav class="navbar">
+        <a href="/" class="nav-button">
+            <img src="/static/img/home3.png" alt="Home">
+        </a>
+    </nav>
+    <!-- 標題 -->
+    <h1 class="centered-title">grep1</h1>
+    <!-- 內容 -->
+    <div class="articles-grid">
+        
+            <div class="article-item">
+                <a href="/article/grep1/chapter_1.txt">chapter_1.txt</a>
+            </div>
+        
+            <div class="article-item">
+                <a href="/article/grep1/chapter_2.txt">chapter_2.txt</a>
+            </div>
+        
+            <div class="article-item">
+                <a href="/article/grep1/chapter_3.txt">chapter_3.txt</a>
+            </div>
+        
+    </div>
+</body>
+</html>
