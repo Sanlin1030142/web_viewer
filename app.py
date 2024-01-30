@@ -12,7 +12,7 @@ def sort_key(file_name):
 # 使用index.html模板
 @app.route('/')
 def index():
-    books_directory = '../books/'
+    books_directory = './books/'
     # 获取所有子目录的名称
     books = [d for d in os.listdir(books_directory) if os.path.isdir(os.path.join(books_directory, d))]
 
@@ -30,14 +30,14 @@ def index():
 
 @app.route('/list_files/<book_name>')
 def list_files(book_name):
-    directory = os.path.join('../books/', book_name)
+    directory = os.path.join('./books/', book_name)
     # 确保文件列表是按字典顺序排序的
     files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))], key=sort_key)
     return render_template('list_files.html', files=files, book_name=book_name)
 
 @app.route('/article/<book_name>/<filename>')
 def article(book_name, filename):
-    directory = os.path.join('../books/', book_name)
+    directory = os.path.join('./books/', book_name)
     # 获取排序后的文件列表
     files = sorted([f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))], key=sort_key)
     file_path = os.path.join(directory, filename)
@@ -49,6 +49,11 @@ def article(book_name, filename):
         except UnicodeDecodeError:
             with open(file_path, 'r', encoding='gb2312') as f:
                 content = f.read()
+
+        # 更改content中的换行符，以便在HTML中正确显示
+        content = content.replace('\n', '<br>')
+        content = content.replace('<br/>', '<br>')
+
         # 找出当前文件在列表中的位置
         current_index = files.index(filename)
         # 获取下一个文件的名称，如果当前文件是列表中的最后一个，则返回第一个文件
