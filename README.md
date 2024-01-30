@@ -1,8 +1,8 @@
 # web_viewer
 ## 基於flask實作網頁小說瀏覽器
 
-1. 需要在上層新增資料夾books，裡面放入小說資料夾
-2. 執行app.py
+1. 執行app.py
+2. 小說存放於 ./books 書籍名稱自訂 章節名稱固定為 chapter_*.txt
 
 支援
 - 多章節
